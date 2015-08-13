@@ -1,0 +1,25 @@
+<div class="tale-contain">
+  <div class="title-info">
+    <% if @tale.image?%>
+      <img src="<%=@tale.image%>"/>
+    <%end%>
+    <h3>
+      <%=@tale.title%>
+    </h3>
+    <p>
+      <%=@tale.author%>
+      <% if @tale.book?%>
+      <br><span><%=@tale.book%></span>
+      <%end%>
+    </p>
+  </div>
+  <div class="story-text-contain">
+    <div class="story-text">
+      <div class="story">
+    <%=@tale.text%>
+    </div>
+  </div>
+  <div class="story-nav">
+  <%= link_to '< Back to All', '../all' %><br><br> <%=link_to 'Random >', @random_tale%> 
+  </div>
+</div>

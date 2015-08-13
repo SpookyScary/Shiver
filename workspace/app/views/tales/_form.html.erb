@@ -1,0 +1,37 @@
+<%= form_for(@tale) do |f| %>
+  <% if @tale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tale.errors.count, "error") %> prohibited this tale from being saved:</h2>
+
+      <ul>
+      <% @tale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" id="title">
+    <%= f.label 'Title *' %><br>
+    <%= f.text_field :title%>
+  </div>
+  <div class="field" id ="author">
+    <%=f.label 'Author *' %><br>
+    <%=f.text_field :author %>
+  </div>
+  <div class="field">
+    <%=f.label 'Book Title' %><br>
+    <%=f.text_field :book %>
+  </div>
+  <div class="field" id="story-text">
+    <%= f.label 'text *' %><br>
+    <%= f.text_area :text %>
+  </div>
+  <div class="field">
+    <%= f.label 'Image Url' %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <button type='submit' id='form-submit'>Create</button>
+  </div>
+<% end %>

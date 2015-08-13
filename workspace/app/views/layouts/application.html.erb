@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SHIVER</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <%=link_to 'SHIVER','/'%>
+    </div>
+    <div class="navigation">
+      <ul>
+        <li><%=link_to 'Stories', '../all'%></li>
+        <li><%=link_to 'About', 'about' %> </li>
+        <li><%=link_to 'Create', new_tale_path %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <%= yield %>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<div class="tales-list">
+        <% @tales.each do |tale| %>
+            <div class="tale-item">
+                <%= link_to tale.title, tale %>
+            </div>
+        <%end%>
+</div>

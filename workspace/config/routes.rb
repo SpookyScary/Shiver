@@ -1,11 +1,23 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
   resources :tales
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 root 'tales#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+get 'about' => 'tales#about'
 get 'all' => 'tales#all'
+get 'tales/all' => 'tales#all'
+get 'filter'=>'tales#filter'
+get 'longest' => 'tales#longest'
+get 'shortest' => 'tales#shortest'
+get 'recently_added' => 'tales#recently_added'
+get 'oldest' => 'tales#oldest'
+get 'fail' => 'tales#fail'
+get 'login' => 'tales#login'
+get 'access' => 'tales#access'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

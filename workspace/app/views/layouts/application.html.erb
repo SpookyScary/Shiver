@@ -3,25 +3,32 @@
 <head>
   <title>SHIVER</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="main-wrapper">
   <div class="topbar">
-    <div class="logo">
+    <div id="logo" class="left">
       <%=link_to 'SHIVER','/'%>
     </div>
-    <div class="navigation">
+    <div class="navigation right">
       <ul>
-        <li><%=link_to 'Stories', '../all'%></li>
-        <li><%=link_to 'About', 'about' %> </li>
-        <li><%=link_to 'Create', new_tale_path %></li>
+        <li class="medium-font"><%=link_to 'Stories', '../all'%></li>
+        <li class="medium-font"><%=link_to 'About', '../about' %> </li>
+        <li class="medium-font"><%=link_to 'Create', '../login' %></li>
+        <li class="medium-font">
+         <form id="search-bar" action='all' method='get'>
+           <input type="text" placeholder="SEARCH" class="medium-font" name="search"/>
+         </form>
+        </li>
       </ul>
     </div>
   </div>
   <div class="content">
     <%= yield %>
   </div>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

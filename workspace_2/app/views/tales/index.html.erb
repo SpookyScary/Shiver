@@ -1,0 +1,15 @@
+<p class='flash'><%= flash[:message] %></p>
+<div class="welcome uppercase center">
+  <h1 class="light-font transparent">Welcome To</h1>
+  <h2 id="welcome-logo" class="transparent medium-font">SHIVER</h2>
+  <p class="transparent medium-font">Stories To Wake The Dead</p>
+</div>
+
+<div class="destination center">
+  <div class="pick-btn btn transparent uppercase">
+    <%=link_to 'Pick Your Poison', 'all'%>
+  </div>
+  <div class="randomize-btn btn transparent uppercase">
+    <%=link_to 'Mystery Scare', @random_tale%>
+  </div>
+</div>

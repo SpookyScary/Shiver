@@ -1,0 +1,22 @@
+//mixins
+@mixin transition($style, $dur, $delay: 0s){
+    transition: $style $dur;
+    -webkit-transition: $style $dur;
+    -moz-transition: $style $dur;
+    transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+}
+
+@mixin size($width,$height){
+    width: $width;
+    height: $height;
+}
+
+@mixin glow($size, $color:white){
+    text-shadow: 0px 0px $size $color;
+}
+
+//variables
+$black-border: 1px solid black;
+$white-border: 1px solid rgba(255,255,255,0.1);

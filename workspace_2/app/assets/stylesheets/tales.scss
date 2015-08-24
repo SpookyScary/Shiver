@@ -1,0 +1,80 @@
+@import 'mixins_variables.scss';
+//intro screen
+.welcome{
+    & h1, p{
+        font-family: 'Lato',sans-serif;
+    }
+    & h1, h2, p{
+        opacity: 0;
+    }
+    & h1{
+        @include glow(20px, rgba(255,255,255,0.8));
+        letter-spacing: -10px;
+        font-size: 100px;
+        margin: 100px 0 -50px 0;
+        word-spacing: 10px;
+        @include transition(all, 2s, 1s);
+    }
+    & h2{
+        font-family: 'Lora',serif;
+        @include glow(50px, #eaeaea);
+        font-size: 250px;
+        letter-spacing: -25px;
+        margin: 0;
+        @include transition(all, 2s, 2s);
+    }
+    & p{
+      margin: -40px 0 0 0;
+      padding: 0;
+      font-size: 18px;
+      @include transition(all, 1.5s, 2.75s);
+      letter-spacing: -5px;
+      color: rgba(255,255,255,0.5);
+    }
+}
+.welcome.show{
+    & h1, h2, p{
+        opacity: 1;
+    }
+    & h1{
+        color: rgba(255,255,255,0.3);
+        text-shadow: none;
+    }
+    & h2{
+        color: #eaeaea;
+        @include glow(10px, rgba(255,255,255,0.8));
+    }
+    & p{
+        letter-spacing: 10px;
+    }
+}
+
+.destination{
+    bottom: 10px;
+    margin: 60px auto;
+    & a{
+        text-decoration: none;
+        color: inherit;
+    }
+}
+.btn{
+    min-width: 200px;
+    height: 50px;
+    padding: 0px 5px;
+    margin: 0 15px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    @include glow(3px, #eaeaea);
+    display: inline-block;
+    @include transition(all, 1s);
+    &:hover{
+        background: none;
+        letter-spacing: 2px;
+        box-shadow: 0px 0px 20px white;
+        text-shadow: none;
+        color: #eaeaea;
+    }
+}

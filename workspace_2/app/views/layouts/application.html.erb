@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SHIVER</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="main-wrapper">
+  <div class="topbar">
+    <div id="logo" class="left">
+      <%=link_to 'SHIVER','/'%>
+    </div>
+    <div class="navigation right">
+      <ul>
+        <li class="medium-font"><%=link_to 'Stories', '../all'%></li>
+        <% if current_member %>
+        <li><%=link_to 'Member', members_path%></li>
+          <% if @current_member.admin%>
+        <li><%=link_to 'Admin', 'tales/new'%></li>
+          <%end%>
+        <%end%>
+        <li class="medium-font">
+         <form id="search-bar" action='all' method='get'>
+           <input type="text" placeholder="SEARCH" class="medium-font" name="search"/>
+         </form>
+        </li>
+        <% if current_member %>
+        <li id="logout">
+          <%if @current_member.image%>
+            <div id="nav_user_img_container" style="background-image:url('<%=@current_member.image%>')"></div>
+          <%end%>
+          <span id="user"><%=@current_member.username%></span> <%= link_to 'Log Out', logout_path%> </li>
+        <%else%>
+        <li class="login-link"><%=link_to 'Log In', login_path%></li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <%= yield %>
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

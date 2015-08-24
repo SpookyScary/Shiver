@@ -1,0 +1,24 @@
+<div class="tale-contain center">
+  <div class="title-info">
+    <h3 class="light-font">
+      <%=@writing.title%>
+    </h3>
+    <p>
+      <%=@writing.member.username%>
+    </p>
+    <p id="reading-time">Approx. <%=@time%> Minute Read</p>
+  </div>
+<div class="tracker">
+  <div class="track">
+  </div>
+</div>
+  <div class="story-text-contain center">
+    <div class="story-text medium-font">
+      <div class="story medium-font">
+        <%=simple_format(@writing.text.gsub(/\n/, '<br/>')).html_safe%>
+      </div>
+  </div>
+</div>
+<div class="story-nav light-font uppercase">
+  <%= link_to '< Back to All', writings_path %><br><br> <%=link_to 'Random >', @random_writing%> 
+  </div>

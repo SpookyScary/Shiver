@@ -1,0 +1,22 @@
+<h1>Upload Your Own!</h1>
+  <% if @writing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@writing.errors.count, "error") %> prohibited this tale from being saved:</h2>
+
+      <ul>
+      <% @writing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="login-form">
+<%=form_for(@writing) do |f|%>
+    <%=f.label "Title"%><br/>
+    <%=f.text_field :title%><br/>
+    <%=f.label "Story"%><br/>
+    <%=f.text_area :text%><br/>
+    <div id="login-btn center">
+        <button type="submit" id="login" class="transparent medium-font">Upload</button>
+    </div>
+<%end%></div>

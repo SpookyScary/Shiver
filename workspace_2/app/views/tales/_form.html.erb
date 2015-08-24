@@ -1,0 +1,29 @@
+<div class="login-form"><%= form_for(@tale) do |f| %>
+  <% if @tale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tale.errors.count, "error") %> prohibited this tale from being saved:</h2>
+
+      <ul>
+      <% @tale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.label 'Title *' %><br/>
+    <%= f.text_field :title %><br/>
+    <%=f.label 'Author *' %><br/>
+    <%=f.text_field :author %><br/>
+    <%=f.label 'Book Title' %><br>
+    <%=f.text_field :book %><br/>
+    <%= f.label 'text *' %><br>
+    <%= f.text_area :text %><br/>
+    <%= f.label 'Image Url' %><br>
+    <%= f.text_field :image %><br/>
+  <div class="login-btn">
+    <button type='submit' id="login" class="transparent medium-font">Create</button>
+  </div>
+  <p>Fields marked with an asterisk * are required</p>
+<%= link_to 'Back', '/all' %>
+<% end %>
+</div>

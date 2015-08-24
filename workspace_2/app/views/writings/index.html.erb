@@ -1,0 +1,17 @@
+<div class="filter-contain">
+    <div class="filter-nav-label right">
+        <h3 id="list-label" class="transparent medium-font">Member Stories</h3>
+    </div>
+</div>
+<div id="member-story-flash"><p class='flash'><%= flash[:yes]%></p></div>
+<div class="tales-list light-font uppercase">
+        <% if @writings.empty? %>
+            <p class="failed-search">No member stories yet</p>
+        <%end%>
+        <% @writings.each do |w| %>
+            <div class="tale-item">
+                <p class="list-username heavy-font"><%= w.member.username %></p>
+                <%= link_to w.title, w %>
+            </div>
+        <%end%>
+</div>

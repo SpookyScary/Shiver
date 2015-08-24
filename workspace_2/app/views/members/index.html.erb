@@ -1,0 +1,14 @@
+<div class="member-index">
+    <p id="member-greeting"><%=@current_member.username.humanize%>, welcome to the</p>
+    <h1 class="light-font uppercase">Members Only Page</h1>
+    <p class="heavy-font uppercase decide">What would you like to do?</p>
+    <div class='member-nav center'>
+        <div class="member-nav-btn light-font mem-story">
+            <%=link_to "Member Stories", :member_stories %>
+        </div>
+        <div class="member-nav-btn light-font mem-write">
+            <%=link_to "Upload Story", :write_story %>
+        </div>
+    </div>
+    <p class="uppercase light-font option-display center"></p>
+</div>

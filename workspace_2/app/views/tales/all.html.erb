@@ -1,0 +1,53 @@
+<div class="filter-contain transparent uppercase heavy-font">
+    <div class="filter-nav left">
+    Order Stories By: &nbsp; 
+    <%if params[:search]%>
+        <input id="search-term" type="hidden" name="search" value="<%=params[:search]%>"/>
+        <select id="second-filter" name="filter" class="filter light-font transparent">  
+            <option value="">SELECT</option>
+            <option value="most recent">Recently Added</option>
+            <option value="longest">Longest Stories</option>
+            <option value="shortest"> Shortest Stories</option>
+        </select>
+    <%else%>
+    <select id="main-filter" class="filter light-font transparent">
+        <option value="">SELECT</option>
+        <option value="recently_added">Recently Added</option>
+        <option value="longest">Longest Stories</option>
+        <option value="shortest">Shortest Stories</option>
+    </select>
+    <%end%>
+    </div>
+    <div class="filter-nav-label right">
+        <h3 id="list-label" class="transparent center medium-font">
+         <% if @tales.empty? %>
+            Nothing Found
+        <%elsif params[:search]%>
+            <%if params[:search]==""%>
+                All Stories
+            <%elsif params[:search] && params[:filter]%> "<%=params[:search]%>"  <%=params[:filter]%>
+            <%else%>
+                "<%=params[:search]%>"
+            <%end%>
+        <%else%>
+            <%= @label %>
+        <%end%>
+        </h3>
+    </div>
+</div>
+<div class="tales-list light-font uppercase">
+        <% if @tales.empty? %>
+            <p class="failed-search">Nothing was found for<br><span class="medium-font"><%=params[:search]%></span><br>Please Try Again</p>
+            <div id="search-two">
+                <form action="all" method="get">
+                    <input type="text" name="search"/>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        <%end%>
+        <% @tales.each do |tale| %>
+            <div class="tale-item">
+                <%= link_to tale.title, tale %>
+            </div>
+        <%end%>
+</div>

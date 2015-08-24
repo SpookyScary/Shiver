@@ -1,0 +1,136 @@
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:700,100,300);
+@import 'mixins_variables.scss';
+$white-border: 1px solid rgba(255,255,255,0.1);
+$line: 70px;
+
+html, body{
+  font-family: 'Lato',sans-serif;
+  background: #222;
+  width: 100%;
+  //change once responsive
+  min-width: 800px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+// application.html layout style
+.main-wrapper{
+  background: url(bkg2.jpg) black no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: fixed;
+  min-height: 100%;
+  width: 100%;
+}
+.topbar{
+  width: 100%;
+  //reset when moved to responsive
+  min-width: 850px;
+  height: $line;
+  color: #eaeaea;
+  position: fixed;
+  z-index: 111;
+  top: 0;
+  background: black;
+  border-bottom: $white-border;
+  & a{
+    text-decoration: none;
+    color: #eaeaea;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+  }
+  & .navigation{
+    line-height: $line;
+    padding-right: 20px;
+    & ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      & li{
+        display: inline-block;
+        margin: 0 15px;
+        font-size: 18px;
+        & a:hover{
+          color: mix(black,red,50);
+        }
+      }
+    }
+  }
+}
+#logout{
+  & a{
+    font-size: 13px;
+  }
+  & #user{
+    font-weight: 800;
+    margin-right: 5px;
+  }
+}
+#search-bar{
+  input{
+    border-radius: 10px;
+    background: #333;
+    text-align: right;
+    width: 70px;
+    font-size: 18px;
+    font-family: 'Lato',sans-serif;
+    border: 1px solid transparent;
+    @include transition(all,0.5s);
+    &:hover, &:focus{
+      background: maroon;
+    }
+    &:focus{
+      width: 200px;
+    }
+  }
+}
+ #logo{
+    line-height:$line;
+    font-size: 60px;
+    letter-spacing: -7px;
+    padding-left: 10px;
+    font-family: 'Lora', serif;
+    & a:hover{
+      color: transparent;
+      @include glow(12px);
+    }
+  }
+  
+.content{
+  padding: $line 0 0 0;
+  //overflow: hidden;
+  text-align: center;
+  color: #eaeaea;
+}
+#signup{
+  & a{
+    color: white;
+    @include transition(all,0.5s);
+    &:hover{
+      color: maroon;
+    }
+  }
+}
+#nav_user_img_container{
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  top: 7px;
+  left: -2px;
+  border-radius: 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.flash{
+    text-align: right;
+    color: transparent;
+    padding-right: 10px;
+    letter-spacing: 5px;
+    @include glow(1px);
+}

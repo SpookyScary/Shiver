@@ -1,0 +1,165 @@
+@import 'mixins_variables.scss';
+//login
+.login-form{
+    margin-top: 50px;
+    padding-bottom: 50px;
+    & p{
+      margin: 0;
+      line-height: 35px;
+    }
+    & a{
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      @include transition(all, 0.3s);
+      &:hover{
+       color: maroon;
+       letter-spacing: 3px;
+      }
+    }
+    & h2{
+        font-size: 40px;
+    }
+    & form{
+        width: 100%;
+        margin: 0 auto;
+    }
+    & label{
+        @include glow(1px);
+    }
+    & textarea{
+      border-radius: 10px;
+      width: 50%;
+    }
+    & input, textarea{
+        margin-left: -15px;
+        @include transition(all, 1s);
+        &:focus{
+            box-shadow: 0px 0px 15px white;
+            background: none;
+        }
+    }
+}
+.login-btn{
+    @include size(250px, 100px);
+    margin: 0 auto;
+}
+#login{
+    @include size(200px,40px);
+    margin-top: 20px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.2);
+    border: $white-border;
+    font-family: 'Lato';
+    letter-spacing: 1px;
+    outline: none;
+    @include glow(2px);
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    &:hover{
+        box-shadow: 0px 0px 15px white;
+        color: white;
+        letter-spacing: 2px;
+    }
+}
+
+// create form
+label{
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+input[type='text'], input[type='password'], input[type='email'], textarea{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background: rgba(black,0.5);
+  border: none;
+  width: 250px;
+  color: white;
+  border-radius: 2px;
+  outline: none;
+  padding: 8px;
+  &:focus{
+    border: none;
+  }
+}
+input[type='text'], input[type='password'], input[type='email']{
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+textarea{
+  font-size: 17px;
+  height: 300px;
+  width: 75%;
+}
+.form-enter{
+  padding-bottom: 20px;
+  & h1{
+    padding-top: 30px;
+  }
+  width: 80%;
+  border-radius: 10px;
+  background: rgba(maroon,0.3);
+  margin: 0 auto;
+  & p{
+    font-size: 12px;
+    opacity: 0.3;
+    padding-bottom: 20px;
+  }
+  & #form-submit{
+    font-family: 'Lato',sans-serif;
+    width: 150px;
+    background: rgba(white,0.4);
+    border: none;
+    outline: 0;
+    border-radius: 10px;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: rgba(white,0.7);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    &:hover{
+      background: white;
+      color: maroon;
+    }
+  }
+  & a{
+    color: #eaeaea;
+    &:hover{
+      letter-spacing: 2px;
+    }
+  }
+}
+#error_explanation ul{
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+//fail screen
+
+.fail-screen{
+    & h1{
+        @include glow(30px);
+        font-size: 100px;
+    }
+    & h1, p{
+        @include transition(all, 3s, 0.5s);
+    }
+}
+.fail-screen.failed {
+    & h1, p{
+    color: white;
+    }
+}

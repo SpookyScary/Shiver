@@ -1,0 +1,30 @@
+<div class="tale-contain center">
+  <div class="title-info">
+    <% if @tale.image?%>
+      <img src="<%=@tale.image%>"/>
+    <%end%>
+    <h3 class="light-font">
+      <%=@tale.title%>
+    </h3>
+    <p>
+      <%=@tale.author%>
+      <% if @tale.book?%>
+      <br><span class="heavy-font"><%=@tale.book%></span>
+      <%end%>
+    </p>
+    <p id="reading-time">Approx. <%=@time%> Minute Read</p>
+  </div>
+<div class="tracker">
+  <div class="track">
+  </div>
+</div>
+  <div class="story-text-contain center">
+    <div class="story-text medium-font">
+      <div class="story medium-font">
+        <%=simple_format(@tale.text.gsub(/\n/, '<br/>')).html_safe%>
+      </div>
+  </div>
+</div>
+<div class="story-nav light-font uppercase">
+  <%= link_to '< Back to All', '../all' %><br><br> <%=link_to 'Random >', @random_tale%> 
+  </div>
